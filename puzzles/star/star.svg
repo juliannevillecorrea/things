@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="20.346510179999996mm" height="29.171044115551044mm" viewBox="0 0 20.346510179999996 29.171044115551044" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<g id="Pad" transform="translate(8.505460,28.972250) scale(1,-1)">
+<path id="Pad_f0000"  d="M -8.305983999999997 14.386387 L 0.0 28.772774 L 0.0 28.772774 L -8.305983999999997 14.386387 L -8.305983999999997 14.386387 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<path id="Pad_f0001"  d="M -1.634803 14.386387 L -1.634803 14.386387 L -8.305983999999997 14.386387 L -8.305983999999997 14.386387 L -1.634803 14.386387 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<path id="Pad_f0002"  d="M 6.6715750000000025 0.0006810644489512185 L -1.634803 14.386387 L -1.634803 14.386387 L 6.671575000000001 0.000681064448953 L 6.671575000000001 0.00068106444895299 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<path id="Pad_f0003"  d="M 11.641575 8.608974 L 6.671575000000001 0.00068106444895299 L 6.671575000000001 0.000681064448953 L 11.641575 8.608974 L 11.641575 8.608974 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<path id="Pad_f0004"  d="M 0.0 28.772774 L 11.641575 8.608974 L 11.641575 8.608974 L 0.0 28.772774 L 0.0 28.772774 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<path id="Pad_f0005"  d="M -8.305983999999997 14.386387 L -1.634803 14.386387 L 6.671575000000001 0.000681064448953 L 11.641575 8.608974 L 0.0 28.772774 L -8.305983999999997 14.386387 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<path id="Pad_f0006"  d="M 0.0 28.772774 L -8.305983999999997 14.386387 L -1.634803 14.386387 L 6.671575000000001 0.000681064448953 L 11.641575 8.608974 L 0.0 28.772774 Z " stroke="#191919" stroke-width="0.35 px" style="stroke-width:0.35;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#cccccc;fill-opacity:1.0;fill-rule: evenodd"/>
+<title>b'Pad'</title>
+</g>
+</svg>
