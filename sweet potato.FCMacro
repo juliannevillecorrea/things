@@ -1,0 +1,59 @@
+import FreeCAD as App
+import Part
+import math
+
+# Safely import the GUI module for view fitting
+try:
+    import FreeCADGui as Gui
+except ImportError:
+    Gui = None
+
+# Initialize or grab the active document
+doc = App.activeDocument()
+if not doc:
+    doc = App.newDocument("FloatingAquaponicPot")
+
+# --- PARAMETERS (Modify these to fit your specific drum/float setup) ---
+POT_TOP_RAD = 75.0      # Top inner radius (150mm diameter)
+POT_BOT_RAD = 55.0      # Bottom inner radius (110mm diameter)
+POT_HEIGHT = 120.0      # Total depth of the grower basket
+WALL_THICKNESS = 3.0    # Minimalist wall thickness for speed and resource saving
+FLANGE_WIDTH = 25.0     # Lip extension to catch onto a foam float or drum ring
+
+# Create the main outer shape and inner hollow cavity
+outer_cone = Part.makeCone(POT_BOT_RAD + WALL_THICKNESS, POT_TOP_RAD + WALL_THICKNESS, POT_HEIGHT)
+inner_cone = Part.makeCone(POT_BOT_RAD, POT_TOP_RAD, POT_HEIGHT)
+basket_shell = outer_cone.cut(inner_cone)
+
+# Create the flotation flange at the top rim
+flange = Part.makeCylinder(POT_TOP_RAD + WALL_THICKNESS + FLANGE_WIDTH, WALL_THICKNESS)
+flange.translate(App.Vector(0, 0, POT_HEIGHT))
+
+# Fuse the basket shell and the flange together
+body = basket_shell.fuse(flange)
+
+# --- ROOT SLIT CUTTERS (Side Walls) ---
+NUM_SIDE_SLITS = 12
+SLIT_WIDTH = 5.0
+SLIT_HEIGHT = POT_HEIGHT - 30.0
+
+for i in range(NUM_SIDE_SLITS):
+    angle = i * (360.0 / NUM_SIDE_SLITS)
+    slit = Part.makeBox(SLIT_WIDTH, POT_TOP_RAD * 2, SLIT_HEIGHT)
+    slit.translate(App.Vector(-SLIT_WIDTH / 2.0, POT_BOT_RAD - 5.0, 15.0))
+    slit.rotate(App.Vector(0, 0, 0), App.Vector(0, 0, 1), angle)
+    body = body.cut(slit)
+
+# --- ROOT HOLE CUTTERS (Base Plate) ---
+NUM_BASE_HOLES = 4
+HOLE_RADIUS = 7.0
+
+for i in range(NUM_BASE_HOLES):
+    angle = i * (360.0 / NUM_BASE_HOLES)
+    base_hole = Part.makeCylinder(HOLE_RADIUS, WALL_THICKNESS + 10.0)
+    base_hole.translate(App.Vector(POT_BOT_RAD / 2.0, 0, -5.0))
+    base_hole.rotate(App.Vector(0, 0, 0), App.Vector(0, 0, 1), angle)
+    body = body.cut(base_hole)
+
+# --- COMPILE AND DISPLAY ---
+pot_feature = doc
